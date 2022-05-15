@@ -31,7 +31,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public AudioSource PlaySound(AudioClip clip, AudioChannel audioChannel, bool loop = false, float volume = 0.5f)
     {
-        if(!clip) return null;
+        if (!clip) return null;
 
         AudioSource source = CreateAudioSource(clip, audioChannel, loop, volume);
         source.Play();
@@ -42,9 +42,11 @@ public class AudioManager : Singleton<AudioManager>
         return source;
     }
 
-    private AudioSource CreateAudioSource(AudioClip clip, AudioChannel audioChannel, bool loop = false, float volume = 0.5f)
+    public AudioSource CreateAudioSource(AudioClip clip, AudioChannel audioChannel, bool loop = false, float volume = 0.5f)
     {
-        AudioSource source = new GameObject(clip.name, typeof(AudioSource)).GetComponent<AudioSource>();
+        string clipName = string.IsNullOrEmpty(clip?.name) ? "Unnamed" : clip.name;
+
+        AudioSource source = new GameObject(clipName).AddComponent<AudioSource>();
         source.transform.parent = transform;
         source.clip = clip;
         source.volume = volume;
