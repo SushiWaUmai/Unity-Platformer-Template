@@ -504,6 +504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6678824279282271802}
   - component: {fileID: 6678824279282271801}
+  - component: {fileID: 8286785602379376083}
+  - component: {fileID: 2649936326473398412}
   m_Layer: 0
   m_Name: PlayerRenderer
   m_TagString: Untagged
@@ -578,3 +580,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8286785602379376083
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6678824279282271800}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4670680e4de5dab3a90249010d84a52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2649936326473398412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6678824279282271800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 068166fa501cda7f0a0d7e12f1b27cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8286785602379376083}
+  _playerController: {fileID: 6678824278210547949}
+  _spriteRenderer: {fileID: 6678824279282271801}
+  _speedParameter: speed
+  _jumpParameter: jump
