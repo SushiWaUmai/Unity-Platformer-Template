@@ -25,6 +25,11 @@ public class PauseMenuManager : Singleton<PauseMenuManager>
         SetPause(!_isPaused);
     }
 
-    public void BackToMainMenu() => SceneManager.LoadScene(_mainMenuScene);
+    public void BackToMainMenu()
+    {
+        SetPause(false);
+        SceneManager.LoadScene(_mainMenuScene);
+    }
+
     public void QuitGame() => Application.Quit();
 }
