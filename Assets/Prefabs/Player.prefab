@@ -62,7 +62,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.212177, y: 1}
+    m_SensorSize: {x: 1.777972, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 6678824278210547951}
   - component: {fileID: 6678824278210547950}
   - component: {fileID: 6678824278210547949}
-  - component: {fileID: 6678824278210547948}
+  - component: {fileID: 4912295129878718712}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -481,7 +481,7 @@ MonoBehaviour:
     WillDashPaddingTime: 0.15
   m_CustomAction:
     Module: {fileID: 0}
---- !u!114 &6678824278210547948
+--- !u!114 &4912295129878718712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -490,10 +490,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6678824278210547946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61e52eb8d749554ab00a7d6118cf20c, type: 3}
+  m_Script: {fileID: 11500000, guid: f1355cbba26adb712b35d737efca3fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Controller: {fileID: 6678824278210547949}
+  _controller: {fileID: 6678824278210547949}
 --- !u!1 &6678824279282271800
 GameObject:
   m_ObjectHideFlags: 0

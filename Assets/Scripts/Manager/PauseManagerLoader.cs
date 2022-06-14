@@ -32,7 +32,7 @@ public class PauseManagerLoader : MonoBehaviour
     {
         if (_pausableScenes.Contains(scene.name))
         {
-            SceneManager.LoadScene(_pauseMenuScene);
+            SceneManager.LoadScene(_pauseMenuScene, LoadSceneMode.Additive);
         }
     }
 }

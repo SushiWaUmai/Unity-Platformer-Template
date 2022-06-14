@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5723c9ba7280778c399f5ef67bc12b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pausableScenes: []
-  _pauseMenuScene: MainMenu
+  _pausableScenes:
+  - Game
+  _pauseMenuScene: PauseMenu
 --- !u!1 &3090194707358831614
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using NaughtyAttributes;
 
 public class PauseMenuManager : Singleton<PauseMenuManager>
 {
     [SerializeField] private GameObject _pauseMenu;
+    [SerializeField, Scene] private string _mainMenuScene;
     private bool _isPaused;
 
     public bool CanPause = true;
@@ -21,4 +24,7 @@ public class PauseMenuManager : Singleton<PauseMenuManager>
     {
         SetPause(!_isPaused);
     }
+
+    public void BackToMainMenu() => SceneManager.LoadScene(_mainMenuScene);
+    public void QuitGame() => Application.Quit();
 }
