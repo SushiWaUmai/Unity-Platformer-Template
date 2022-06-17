@@ -62,7 +62,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.777972, y: 1}
+    m_SensorSize: {x: 1.777193, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -327,6 +327,7 @@ GameObject:
   - component: {fileID: 6678824278210547950}
   - component: {fileID: 6678824278210547949}
   - component: {fileID: 4912295129878718712}
+  - component: {fileID: 3465380334224947376}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -494,6 +495,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 6678824278210547949}
+--- !u!114 &3465380334224947376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6678824278210547946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6466017a767e66b8279be8f8be46b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLifes: 3
 --- !u!1 &6678824279282271800
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8286785602379376083}
   _playerController: {fileID: 6678824278210547949}
+  _playerLife: {fileID: 3465380334224947376}
   _spriteRenderer: {fileID: 6678824279282271801}
   _speedParameter: speed
   _jumpParameter: jump
+  _deathParameter: death

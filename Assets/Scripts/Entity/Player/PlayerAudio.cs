@@ -35,16 +35,25 @@ public class PlayerAudio : MonoBehaviour
 
     public void OnJump()
     {
+        if (!_jump)
+            return;
+
         AudioManager.Instance.PlaySound(_jump, AudioManager.AudioChannel.SFX);
     }
 
     public void OnHit(int _)
     {
+        if (!_hit)
+            return;
+
         AudioManager.Instance.PlaySound(_hit, AudioManager.AudioChannel.SFX);
     }
 
     public void OnDie()
     {
+        if (!_die)
+            return;
+
         AudioManager.Instance.PlaySound(_die, AudioManager.AudioChannel.SFX);
     }
 }
