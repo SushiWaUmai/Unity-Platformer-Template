@@ -23,14 +23,14 @@ public class PlayerAudio : MonoBehaviour
     {
         _playerController.OnJump += OnJump;
         _playerLife.OnHit += OnHit;
-        _playerLife.OnDie += OnDie;
+        _playerLife.OnDeath += OnDie;
     }
 
     private void OnDisable()
     {
         _playerController.OnJump -= OnJump;
         _playerLife.OnHit -= OnHit;
-        _playerLife.OnDie -= OnDie;
+        _playerLife.OnDeath -= OnDie;
     }
 
     public void OnJump()

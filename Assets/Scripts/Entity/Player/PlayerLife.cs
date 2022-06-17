@@ -4,7 +4,7 @@ public class PlayerLife : MonoBehaviour
 {
     private int _lifes;
 
-    public event System.Action OnDie;
+    public event System.Action OnDeath;
     public event System.Action<int> OnHit;
 
     public void Hit() => TakeDamage(1);
@@ -24,6 +24,6 @@ public class PlayerLife : MonoBehaviour
 
     public void Die()
     {
-        OnDie?.Invoke();
+        OnDeath?.Invoke();
     }
 }

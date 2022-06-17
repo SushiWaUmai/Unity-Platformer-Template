@@ -5,21 +5,24 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private BasicMovementController2D _playerController;
+    [SerializeField] private PlayerLife _playerLife;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     [SerializeField] private string _speedParameter = "speed";
     [SerializeField] private string _jumpParameter = "jump";
+    [SerializeField] private string _deathParameter = "death";
 
     private void OnValidate()
     {
         if (!_animator)
             _animator = GetComponent<Animator>();
-
-        if (!_playerController)
-            _playerController = GetComponent<BasicMovementController2D>();
-
         if (!_spriteRenderer)
             _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (!_playerController)
+            _playerController = GetComponentInParent<BasicMovementController2D>();
+        if (!_playerLife)
+            _playerLife = GetComponentInParent<PlayerLife>();
     }
 
     private void OnEnable()
@@ -27,6 +30,7 @@ public class PlayerAnimation : MonoBehaviour
         _playerController.OnJump += OnStartJump;
         _playerController.OnLanded += OnEndJump;
         _playerController.OnFacingFlip += UpdateFlip;
+        _playerLife.OnDeath += OnDeath;
     }
 
     private void OnDisable()
@@ -34,6 +38,7 @@ public class PlayerAnimation : MonoBehaviour
         _playerController.OnJump -= OnStartJump;
         _playerController.OnLanded -= OnEndJump;
         _playerController.OnFacingFlip -= UpdateFlip;
+        _playerLife.OnDeath -= OnDeath;
     }
 
     private void FixedUpdate()
@@ -65,6 +70,14 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetBool(_jumpParameter, false);
     }
 
+    public void OnDeath()
+    {
+        if (string.IsNullOrEmpty(_deathParameter))
+            return;
+
+        _animator.SetTrigger(_deathParameter);
+    }
+
     public void UpdateFlip(int direction)
     {
         if (direction > 0)
@@ -73,4 +86,3 @@ public class PlayerAnimation : MonoBehaviour
             _spriteRenderer.flipX = true;
     }
 }
-
